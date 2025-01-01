@@ -246,7 +246,9 @@ class RTMoSR(nn.Module):
         self.scale = scale
         unshuffle = 0
         if scale < 4 and unshuffle_mod:
-            unshuffle = 4 - (4 - scale)
+            if scale == 3:
+                raise ValueError("Unshuffle_mod does not support 3x")
+            unshuffle = 4 // scale
             scale = 4
 
         self.to_feat = (
