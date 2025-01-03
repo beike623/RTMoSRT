@@ -321,7 +321,6 @@ class OmniShift(nn.Module):
 class ParPixelUnshuffle(nn.Module):
     def __init__(self, in_dim, out_dim, down):
         super().__init__()
-        print(out_dim)
         self.pu = nn.PixelUnshuffle(down)
         self.poll = nn.Sequential(
             nn.MaxPool2d(kernel_size=down, stride=down), RepConv(in_dim, out_dim)
