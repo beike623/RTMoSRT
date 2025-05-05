@@ -1,3 +1,3 @@
 # RTMoSRT
 
-Modifications made for TensorRT compatibility
+Modifications made to RTMoSR for TensorRT compatibility
